@@ -20,11 +20,11 @@
       "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/jsx-runtime"
       ],
       "rules": {
-        "testing-library/render-result-naming-convention": "off",
-        "react/react-in-jsx-scope": "off"
+        "testing-library/render-result-naming-convention": "off"
       }
     },
     {
