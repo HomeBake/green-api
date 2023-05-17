@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:effector/recommended",
+    "plugin:effector/scope"
+  ],
+  "plugins": ["prettier", "react", "@typescript-eslint"],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "testing-library/render-result-naming-convention": "off",
+        "react/react-in-jsx-scope": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "indent": ["error", 2],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"]
+      }
+    }
+  ],
+  "rules": {
+    "import/no-unresolved": "error",
+    "react/display-name": "off",
+    "curly": "error"
+  }
+}
