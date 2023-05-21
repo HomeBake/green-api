@@ -1,7 +1,11 @@
+import { AppProvider } from './app-provider';
+import { Test } from './test';
 
 function App() {
   return (
-    <div></div>
+    <AppProvider>
+      <Test></Test>
+    </AppProvider>
   );
 }
 

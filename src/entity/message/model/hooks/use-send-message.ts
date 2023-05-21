@@ -7,10 +7,7 @@ import {
   TSendMessageRequest,
   TSendMessageResponse,
 } from '../../../../shared/api/api-message/types';
-import {
-  TInstanceInfo,
-  UnknownBusinessError,
-} from '../../../../shared/api/types';
+import { UnknownBusinessError } from '../../../../shared/api/types';
 import { messageKeys } from '../../query-keys';
 import { instanceInfo } from '../../../../shared/api/constant';
 
@@ -22,6 +19,7 @@ type TUseSendMessage = {
 type TRequestParam = TSendMessageRequest;
 
 export const UseSendMessage = ({ onSuccess, onError }: TUseSendMessage) => {
+  console.log('instanceInfo', instanceInfo);
   const { mutateAsync, ...rest } = useMutation(
     messageKeys.send(),
     ({ requestParam }: { requestParam: TRequestParam }) =>

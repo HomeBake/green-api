@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 type Props = {
-  onSubmit: () => void
-}
+  onSubmit: () => void;
+};
 
 export const ConversationPanelFooter = ({ onSubmit }: Props) => {
-  return <></>
+  return <></>;
 };

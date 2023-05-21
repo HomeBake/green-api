@@ -18,4 +18,3 @@ export const apiGetNotification = async ({
 };
 
 // GET https://api.green-api.com/waInstance{{idInstance}}/ReceiveNotification/{{apiTokenInstance}}
-

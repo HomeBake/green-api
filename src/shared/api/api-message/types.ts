@@ -7,5 +7,5 @@ export type TSendMessageRequest = {
 };
 
 export type TSendMessageResponse = {
-  idMessage: string
+  idMessage: string;
 };

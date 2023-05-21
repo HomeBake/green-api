@@ -5,9 +5,7 @@
     "react-app",
     "react-app/jest",
     "plugin:prettier/recommended",
-    "plugin:import/typescript",
-    "plugin:effector/recommended",
-    "plugin:effector/scope"
+    "plugin:import/typescript"
   ],
   "plugins": ["prettier", "react", "@typescript-eslint"],
   "overrides": [
