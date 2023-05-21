@@ -1,5 +1,5 @@
-import { UseSendMessage } from '../entity/message/model/hooks/use-send-message';
-import { instanceInfo } from '../shared/api/constant';
+import { UseSendMessage } from '@entities/message/model/hooks/use-send-message';
+import { instanceInfo } from '@shared/api/constant';
 
 export const Test = () => {
   console.log(instanceInfo);

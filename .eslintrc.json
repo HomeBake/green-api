@@ -4,6 +4,7 @@
   "extends": [
     "react-app",
     "react-app/jest",
+    "plugin:import/typescript",
     "plugin:prettier/recommended",
     "plugin:import/typescript"
   ],
@@ -24,20 +25,26 @@
       "rules": {
         "testing-library/render-result-naming-convention": "off"
       }
-    },
-    {
-      "files": ["**/*.stories.*"],
-      "rules": {
-        "indent": ["error", 2],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"]
-      }
     }
   ],
   "rules": {
     "import/no-unresolved": "error",
     "react/display-name": "off",
     "curly": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@features", "./src/features"],
+          ["@shared", "./src/shared"],
+          ["@entities", "./src/entities"],
+          ["@app", "./src/app"],
+          ["@pages", "./src/pages"],
+          ["@widgets", "./src/widgets"]
+        ],
+        "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
+      }
+    }
   }
 }

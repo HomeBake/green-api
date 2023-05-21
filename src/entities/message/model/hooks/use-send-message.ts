@@ -1,29 +1,29 @@
 import { AxiosError } from 'axios';
 import { useCallback } from 'react';
 import { useMutation } from 'react-query';
-import { apiSendMessage } from '../../../../shared/api/api-message/api';
 
 import {
-  TSendMessageRequest,
   TSendMessageResponse,
-} from '../../../../shared/api/api-message/types';
-import { UnknownBusinessError } from '../../../../shared/api/types';
+  TSendMessageRequest,
+  apiSendMessage,
+  TInstanceInfo,
+  UnknownBusinessError,
+} from '@shared/api';
+
 import { messageKeys } from '../../query-keys';
-import { instanceInfo } from '../../../../shared/api/constant';
 
 type TUseSendMessage = {
   onSuccess: (data: TSendMessageResponse) => void;
   onError: (businessError: UnknownBusinessError) => void;
 };
 
-type TRequestParam = TSendMessageRequest;
+type TRequestParam = TSendMessageRequest & TInstanceInfo;
 
 export const UseSendMessage = ({ onSuccess, onError }: TUseSendMessage) => {
-  console.log('instanceInfo', instanceInfo);
   const { mutateAsync, ...rest } = useMutation(
     messageKeys.send(),
     ({ requestParam }: { requestParam: TRequestParam }) =>
-      apiSendMessage({ ...requestParam, ...instanceInfo }),
+      apiSendMessage({ ...requestParam }),
     {
       onSuccess: ({ data }) => {
         onSuccess(data);
