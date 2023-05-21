@@ -1,4 +1,12 @@
+export type TDeleteNotificationRequest = {
+  receiptId: string;
+};
+
 export type TGetNotificationRequest = {};
+
+export type TDeleteNotificationResponse = {
+  status: boolean;
+};
 
 export type TGetNotificationResponse = {
   receiptId: string;

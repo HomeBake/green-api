@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
+type Props = {} & React.ComponentPropsWithoutRef<'button'>;
 
-type Props = {
-    children: ReactNode
-}
-
-export const Button = ({ children }: Props) => {
-  return <button>{children}</button>;
+export const Button = ({ ...props }: Props) => {
+  return <button {...props}></button>;
 };

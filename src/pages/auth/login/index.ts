@@ -1,1 +1,1 @@
-export { Login } from './login';
+export { LoginConnector } from './login-connector';

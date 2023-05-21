@@ -1,9 +1,19 @@
-import { InputHTMLAttributes, ReactNode } from "react"
+import { InputHTMLAttributes, ReactNode } from 'react';
+import styled from 'styled-components';
+import { Typography } from '../../atoms/typography/typography';
 
 type Props = {
-    leftItem: ReactNode;
-} & InputHTMLAttributes<HTMLInputElement>
+  leftItem?: ReactNode;
+  title?: string;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({leftItem, ...rest}: Props) => {
-    return <><input {...rest} /></>
-}
+const Wrapper = styled.div``;
+
+export const Input = ({ leftItem, title, ...rest }: Props) => {
+  return (
+    <Wrapper>
+      {title ? <Typography>{title}</Typography> : null}
+      <input {...rest} />
+    </Wrapper>
+  );
+};

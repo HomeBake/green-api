@@ -1,9 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
 type Props = {
-    children: ReactNode;
-}
+  children: ReactNode;
+};
+
+const Wrapper = styled.div``;
 
 export const Typography = ({ children }: Props) => {
-    return <p>{children}</p>
-}
+  return <Wrapper>{children}</Wrapper>;
+};

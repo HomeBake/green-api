@@ -1,13 +1,13 @@
-import { Route } from '@tanstack/react-location';
-import { Test } from './test';
-import { Login } from '../pages/auth/login/login';
+import { Navigate, Route } from '@tanstack/react-location';
 import { Logout } from '@pages/auth/logout';
 import { AuthGuard } from '@pages/guard/auth-guard';
+import { LoginConnector } from '@pages/auth/login';
+import { MessagesConnector } from '@pages/messager/messages';
 
 export const routes: Route[] = [
   {
     path: '/login',
-    element: <Login />,
+    element: <LoginConnector />,
   },
   {
     path: '/logout',
@@ -17,8 +17,11 @@ export const routes: Route[] = [
     path: '/home',
     element: (
       <AuthGuard>
-        <Test />
+        <MessagesConnector />
       </AuthGuard>
     ),
+  },
+  {
+    element: <Navigate to={'/login'} />,
   },
 ];

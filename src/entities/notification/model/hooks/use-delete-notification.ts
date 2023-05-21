@@ -3,38 +3,40 @@ import { useCallback } from 'react';
 import { useMutation } from 'react-query';
 
 import {
-  TStateInstanceRequest,
+  TDeleteNotificationResponse,
+  TDeleteNotificationRequest,
+  apiDeleteNotification,
   TInstanceInfo,
-  apiGetStateInstance,
   UnknownBusinessError,
-  TStateInstanceResponse,
 } from '@shared/api';
 
-import { accountKeys } from '../../query-keys';
+import { notificationKeys } from '../../query-keys';
 
-type TUseSendMessage = {
-  onSuccess: (
-    data: TStateInstanceResponse,
-    requestParam: TRequestParam,
-  ) => void;
-  onError: (businessError: UnknownBusinessError) => void;
+type TUseDeleteNotification = {
+  onSuccess?: (data: TDeleteNotificationResponse) => void;
+  onError?: (businessError: UnknownBusinessError) => void;
 };
 
-type TRequestParam = TStateInstanceRequest & TInstanceInfo;
+type TRequestParam = TDeleteNotificationRequest & TInstanceInfo;
 
-export const UseGetStateInstance = ({
+export const UseDeleteNotification = ({
   onSuccess,
   onError,
-}: TUseSendMessage) => {
+}: TUseDeleteNotification) => {
   const { mutateAsync, ...rest } = useMutation(
-    accountKeys.getState(),
+    notificationKeys.delete(),
     ({ requestParam }: { requestParam: TRequestParam }) =>
-      apiGetStateInstance({ ...requestParam }),
+      apiDeleteNotification({ ...requestParam }),
     {
-      onSuccess: ({ data }, { requestParam }) => {
-        onSuccess(data, requestParam);
+      onSuccess: ({ data }) => {
+        if (onSuccess) {
+          onSuccess(data);
+        }
       },
       onError: ({ response }: AxiosError<UnknownBusinessError>) => {
+        if (!onError) {
+          return;
+        }
         if (response?.data.code && response.data.message) {
           onError(response.data);
         } else {
@@ -48,7 +50,7 @@ export const UseGetStateInstance = ({
     },
   );
 
-  const getStateInstance = useCallback(
+  const deleteNotification = useCallback(
     (requestParam: TRequestParam) => {
       return mutateAsync({
         requestParam,
@@ -56,5 +58,5 @@ export const UseGetStateInstance = ({
     },
     [mutateAsync],
   );
-  return { ...rest, getStateInstance };
+  return { ...rest, deleteNotification };
 };

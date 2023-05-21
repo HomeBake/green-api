@@ -28,7 +28,7 @@
     }
   ],
   "rules": {
-    "import/no-unresolved": "error",
+    "import/no-unresolved": "off",
     "react/display-name": "off",
     "curly": "error"
   },
