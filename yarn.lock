@@ -1061,7 +1061,7 @@
   resolved "https://registry.yarnpkg.com/@babel/regjsgen/-/regjsgen-0.8.0.tgz#f0ba69b075e1f05fb2825b7fad991e7adbb18310"
   integrity sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.16.7", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.21.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.5.tgz#8492dddda9644ae3bda3b45eabe87382caee7200"
   integrity sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==
@@ -1823,6 +1823,14 @@
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
+
+"@tanstack/react-location@^3.7.4":
+  version "3.7.4"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-location/-/react-location-3.7.4.tgz#0125ba5685805d232429b8df70d20cb6c2a56cec"
+  integrity sha512-6rH2vNHGr0uyeUz5ZHvWMYjeYKGgIKFzvs5749QtnS9f+FU7t7fQE0hKZAzltBZk82LT7iYbcHBRyUg2lW13VA==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    history "^5.2.0"
 
 "@testing-library/dom@^8.5.0":
   version "8.20.0"
@@ -4603,6 +4611,23 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
+effector-react@^22.5.3:
+  version "22.5.3"
+  resolved "https://registry.yarnpkg.com/effector-react/-/effector-react-22.5.3.tgz#76da8ea811f73bdf3cd0f5b2477c9f5440bee358"
+  integrity sha512-JEFh+eERSYTu99h+Zba9g4a7JFHq0AKo4u9+ZvbceFiijSzzQl5ChPuRsI8Y9Ly2uobFANzPRvD+U3UXiDEcrQ==
+  dependencies:
+    use-sync-external-store "^1.0.0"
+
+effector-storage@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/effector-storage/-/effector-storage-6.0.0.tgz#8c42fcc1acbf59067313ce6cea146139c60da310"
+  integrity sha512-eo6Qkw06NKLWGzn5oxB45F04uD234MgmFnvmpod3ifHIGWEuxo6brmqpNDK+N3xYXOMKzDXLkSnvsfCkV5os8g==
+
+effector@^22.8.6:
+  version "22.8.6"
+  resolved "https://registry.yarnpkg.com/effector/-/effector-22.8.6.tgz#254af8966ba52f9abe2a9db703ec0e9d424bcb8e"
+  integrity sha512-Bkg/rlPs7J4dmOFGPLLcL7X0SZeA8WdRnyC2X4tGVo7i6M8oxYwtNOkEUact/zIT/MgqTGm9A8T40dPnr8oXmA==
+
 ejs@^3.1.6:
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.9.tgz#03c9e8777fe12686a9effcef22303ca3d8eeb361"
@@ -5985,6 +6010,13 @@ he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+
+history@^5.2.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/history/-/history-5.3.0.tgz#1548abaa245ba47992f063a0783db91ef201c73b"
+  integrity sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
@@ -11030,6 +11062,11 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-sync-external-store@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 use@^3.1.0:
   version "3.1.1"

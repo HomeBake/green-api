@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { QueryClientProvider } from 'react-query';
+
 import { queryClient } from '@shared/api/query-client';
 
 type Props = {

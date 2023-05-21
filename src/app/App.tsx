@@ -1,10 +1,16 @@
+import { Outlet, ReactLocation, Router } from '@tanstack/react-location';
+
 import { AppProvider } from './app-provider';
-import { Test } from './test';
+import { routes } from './routes';
+
+const location = new ReactLocation();
 
 function App() {
   return (
     <AppProvider>
-      <Test></Test>
+      <Router location={location} routes={routes}>
+        <Outlet />
+      </Router>
     </AppProvider>
   );
 }
