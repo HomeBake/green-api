@@ -12,19 +12,20 @@ import {
   UnknownBusinessError,
 } from '../../../../shared/api/types';
 import { messageKeys } from '../../query-keys';
+import { instanceInfo } from '../../../../shared/api/constant';
 
 type TUseSendMessage = {
   onSuccess: (data: TSendMessageResponse) => void;
   onError: (businessError: UnknownBusinessError) => void;
 };
 
-type TRequestParam = TSendMessageRequest & TInstanceInfo;
+type TRequestParam = TSendMessageRequest;
 
 export const UseSendMessage = ({ onSuccess, onError }: TUseSendMessage) => {
   const { mutateAsync, ...rest } = useMutation(
     messageKeys.send(),
     ({ requestParam }: { requestParam: TRequestParam }) =>
-      apiSendMessage({ ...requestParam }),
+      apiSendMessage({ ...requestParam, ...instanceInfo }),
     {
       onSuccess: ({ data }) => {
         onSuccess(data);

@@ -4,13 +4,14 @@ import {
   TGetNotificationRequest,
   TGetNotificationResponseBody,
 } from '../../../../shared/api/api-notification/types';
+import { instanceInfo } from '../../../../shared/api/constant';
 import { TInstanceInfo } from '../../../../shared/api/types';
 import { notificationKeys } from '../../query-keys';
 
 export const UseGetNotification = ({
   ...requestParam
-}: TGetNotificationRequest & TInstanceInfo) => {
+}: TGetNotificationRequest) => {
   return useQuery(notificationKeys.send(), () =>
-    apiGetNotification({ ...requestParam }),
+    apiGetNotification({ ...requestParam, ...instanceInfo }),
   );
 };
