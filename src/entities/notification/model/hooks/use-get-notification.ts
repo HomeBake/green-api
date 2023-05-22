@@ -8,7 +8,7 @@ import {
 
 import { notificationKeys } from '../../query-keys';
 
-export const UseGetNotification = ({
+export const useGetNotification = ({
   ...requestParam
 }: TGetNotificationRequest & TInstanceInfo) => {
   return useQuery(

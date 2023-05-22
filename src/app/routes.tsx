@@ -3,6 +3,8 @@ import { Logout } from '@pages/auth/logout';
 import { AuthGuard } from '@pages/guard/auth-guard';
 import { LoginConnector } from '@pages/auth/login';
 import { MessagesConnector } from '@pages/messager/messages';
+import { NewChatConnector } from '@pages/messager/new-chat';
+import { NumberGuard } from '@pages/guard/number-guard';
 
 export const routes: Route[] = [
   {
@@ -17,7 +19,17 @@ export const routes: Route[] = [
     path: '/home',
     element: (
       <AuthGuard>
-        <MessagesConnector />
+        <NumberGuard>
+          <MessagesConnector />
+        </NumberGuard>
+      </AuthGuard>
+    ),
+  },
+  {
+    path: '/new-chat',
+    element: (
+      <AuthGuard>
+        <NewChatConnector />
       </AuthGuard>
     ),
   },

@@ -22,7 +22,7 @@ type TUseSendMessage = {
 
 type TRequestParam = TStateInstanceRequest & TInstanceInfo;
 
-export const UseGetStateInstance = ({
+export const useGetStateInstance = ({
   onSuccess,
   onError,
 }: TUseSendMessage) => {

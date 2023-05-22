@@ -1,1 +1,1 @@
-export { UseSendMessage } from './use-send-message';
+export { useSendMessage } from './use-send-message';

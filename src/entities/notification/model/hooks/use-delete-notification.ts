@@ -19,7 +19,7 @@ type TUseDeleteNotification = {
 
 type TRequestParam = TDeleteNotificationRequest & TInstanceInfo;
 
-export const UseDeleteNotification = ({
+export const useDeleteNotification = ({
   onSuccess,
   onError,
 }: TUseDeleteNotification) => {

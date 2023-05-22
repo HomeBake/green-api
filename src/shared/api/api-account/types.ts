@@ -8,3 +8,13 @@ export type TStateInstanceResponse = {
     | 'sleepMode'
     | 'starting';
 };
+
+export type TGetAvatarRequest = {
+  chatId: string;
+};
+
+export type TGetAvatarResponse = {
+  existsWhatsapp: boolean;
+  urlAvatar: string;
+  reason: string;
+};

@@ -13,20 +13,20 @@ import {
 import { messageKeys } from '../../query-keys';
 
 type TUseSendMessage = {
-  onSuccess: (data: TSendMessageResponse) => void;
+  onSuccess: (data: TSendMessageResponse, requestParam: TRequestParam) => void;
   onError: (businessError: UnknownBusinessError) => void;
 };
 
 type TRequestParam = TSendMessageRequest & TInstanceInfo;
 
-export const UseSendMessage = ({ onSuccess, onError }: TUseSendMessage) => {
+export const useSendMessage = ({ onSuccess, onError }: TUseSendMessage) => {
   const { mutateAsync, ...rest } = useMutation(
     messageKeys.send(),
     ({ requestParam }: { requestParam: TRequestParam }) =>
       apiSendMessage({ ...requestParam }),
     {
-      onSuccess: ({ data }) => {
-        onSuccess(data);
+      onSuccess: ({ data }, { requestParam }) => {
+        onSuccess(data, requestParam);
       },
       onError: ({ response }: AxiosError<UnknownBusinessError>) => {
         if (response?.data.code && response.data.message) {
