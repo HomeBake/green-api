@@ -1,1 +1,1 @@
-export { ConversationPanelFooter } from './conversation-panel-footer';
+export { ConversationPanelFooterConnector } from './conversation-panel-footer-connector';

@@ -20,9 +20,9 @@ export const UserCard = ({
   return (
     <>
       <UserIcon img={img} />
-      <Typography>{name}</Typography>
+      <Typography variant="h1">{name}</Typography>
       <LastMessage image={<>status</>} text={lastMessage} />
-      <Typography>{lastSeen}</Typography>
+      <Typography variant="h1">{lastSeen}</Typography>
     </>
   );
 };

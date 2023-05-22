@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { $isLogin, loginUp } from '@entities/account/model/auth';
 import { useNavigate } from '@tanstack/react-location';
-import { UseGetStateInstance } from '@entities/account/model/hooks/use-get-state-instance';
+import { useGetStateInstance } from '@entities/account/model/hooks/use-get-state-instance';
 
 import { Login } from './login';
 import { setInstanceData } from '@entities/account/model/instance';
@@ -11,7 +11,7 @@ import { setInstanceData } from '@entities/account/model/instance';
 export const LoginConnector = () => {
   const navigate = useNavigate();
   const isLogin = useStore($isLogin);
-  const { getStateInstance } = UseGetStateInstance({
+  const { getStateInstance } = useGetStateInstance({
     onSuccess: (data, requestParam) => {
       if (
         data.stateInstance === 'authorized' ||

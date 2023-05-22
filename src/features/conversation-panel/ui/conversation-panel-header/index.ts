@@ -1,1 +1,1 @@
-export { ConversationPanelHeader } from './conversation-panel-header';
+export { ConversationPanelHeaderConnector } from './conversation-panel-header-connector';

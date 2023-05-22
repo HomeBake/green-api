@@ -46,7 +46,9 @@ export const Login = ({ onLogin }: Props) => {
           onChange={value => setApiTokenInstance(value.target.value)}
           autoComplete="on"
         />
-        <Button onClick={onLoginHandler}>Войти</Button>
+        <Button variant="outlined" onClick={onLoginHandler}>
+          Войти
+        </Button>
       </LoginWrapper>
     </Wrapper>
   );
